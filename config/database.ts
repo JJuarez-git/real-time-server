@@ -6,5 +6,5 @@ export const sequelize = new Sequelize({
     database: "real_time",
     username: "root",
     password: "root",
-    logging: (msg) => console.log(msg)
+    logging: false
 });

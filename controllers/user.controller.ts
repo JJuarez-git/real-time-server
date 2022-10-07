@@ -1,7 +1,7 @@
 import { Request, Response } from "express"
 import { User } from '../models/User';
 
-export const getAllUsers = async (req: Request, res: Response) => {
+const getAllUsers = async (req: Request, res: Response) => {
     try {
         const users = await User.findAll()
         res.json(users)
@@ -11,7 +11,7 @@ export const getAllUsers = async (req: Request, res: Response) => {
     }
 }
 
-export const createUser = async (req: Request, res: Response) => {
+const createUser = async (req: Request, res: Response) => {
     try {
         const { name, age } = req.body
         const newUser = await User.create({ name, age });

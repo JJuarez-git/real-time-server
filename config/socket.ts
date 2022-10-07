@@ -4,7 +4,7 @@ export default class SocketConnection {
 
     private static _instance: SocketConnection;
     private _socket: Socket;
-    private port = process.env.SOCKET_PORT || 6000;
+    private port = process.env.SOCKET_PORT || 9000;
 
     private constructor() {
         this._socket = io(`http://localhost:${this.port}`)
@@ -17,7 +17,7 @@ export default class SocketConnection {
 
     private connection = () => {
         this._socket.on('connect', () => {
-            console.log(`[SOCKET SERVER]: Connected to socket server at port ${6000} | ID: ${this._socket.id}`);
+            console.log(`[SOCKET SERVER]: Connected to socket server at port ${this.port} | ID: ${this._socket.id}`);
         })
         this._socket.on('disconnect', () => {
             console.log(`[SOCKET SERVER]: Disconnected from socket server`);

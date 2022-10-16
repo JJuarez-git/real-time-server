@@ -41,7 +41,7 @@ export default class Server {
                 console.log(`[API SERVER]: Listening at http://localhost:${this.port}${this.API_URI}`);
                 console.log(`[DB]: Connected to "${sequelize.getDatabaseName()}", ${sequelize.getDialect()}`);
             })
-            SocketConnection.instance
+            //SocketConnection.instance
         } catch (error) {
             console.error(`[ERROR]: ${error}`)
         }
